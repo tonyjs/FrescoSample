@@ -12,8 +12,6 @@ import com.facebook.datasource.DataSource;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.animated.base.AnimatedDrawable;
 import com.facebook.imagepipeline.animated.factory.AnimatedDrawableFactory;
-import com.facebook.imagepipeline.common.ImageDecodeOptions;
-import com.facebook.imagepipeline.common.ResizeOptions;
 import com.facebook.imagepipeline.core.ImagePipeline;
 import com.facebook.imagepipeline.image.CloseableAnimatedImage;
 import com.facebook.imagepipeline.image.CloseableBitmap;
@@ -27,14 +25,7 @@ import com.facebook.imagepipeline.request.ImageRequestBuilder;
 public class BitmapUtil {
 
     public static void loadPlainBitmap(Uri uri, final OnResourceReadyCallback onResourceReadyCallback) {
-//        if (resizeOptions == null) {
-//            int maximumBitmapSize = getMaximumBitmapSize();
-//            LogUtil.d("BitmapUtil", "maximumBitmapSize = " + maximumBitmapSize);
-//            resizeOptions = new ResizeOptions(maximumBitmapSize, maximumBitmapSize);
-//        }
-
         ImageRequest imageRequest = ImageRequestBuilder.newBuilderWithSource(uri)
-//                .setResizeOptions(resizeOptions)
                 .setAutoRotateEnabled(true)
                 .build();
 
